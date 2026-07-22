@@ -8,7 +8,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        let res = await axios.get("http://localhost:3010/allOrders");
+        let res = await axios.get(`${import.meta.env.VITE_API_URL}/allOrders`);
         setAllOrders(res.data);
         console.log(allOrders);
       } catch (error) {

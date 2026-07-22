@@ -7,7 +7,9 @@ const Positions = () => {
   useEffect(() => {
     const fetchPositions = async () => {
       try {
-        const res = await axios.get("http://localhost:3010/allPositions");
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/allPositions`,
+        );
         setAllPositions(res.data);
         console.log(res.data);
       } catch (error) {

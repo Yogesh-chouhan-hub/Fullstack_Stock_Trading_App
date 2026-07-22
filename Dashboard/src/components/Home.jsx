@@ -13,7 +13,7 @@ const Home = () => {
     const verifyCookie = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:3010/",
+          `${import.meta.env.VITE_API_URL}/`,
           {},
           {
             withCredentials: true,

@@ -10,7 +10,7 @@ const BuyWindow = ({ stock, close }) => {
 
   const handleBuyBtn = async () => {
     try {
-      await axios.post("http://localhost:3010/newOrder", {
+      await axios.post(`${import.meta.env.VITE_API_URL}newOrder`, {
         name: stock.name,
         qty: Number(qty),
         price: Number(price),

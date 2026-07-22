@@ -17,9 +17,9 @@ const Summary = () => {
     const fetchData = async () => {
       try {
         const [holdingsRes, positionsRes, ordersRes] = await Promise.all([
-          axios.get("http://localhost:3010/allHoldings"),
-          axios.get("http://localhost:3010/allPositions"),
-          axios.get("http://localhost:3010/allOrders"),
+          axios.get(`${import.meta.env.VITE_API_URL}/allHoldings`),
+          axios.get(`${import.meta.env.VITE_API_URL}/allPositions`),
+          axios.get(`${import.meta.env.VITE_API_URL}/allOrders`),
         ]);
 
         const holdings = holdingsRes.data;

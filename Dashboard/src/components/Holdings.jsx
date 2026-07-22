@@ -9,7 +9,9 @@ const Holdings = () => {
   useEffect(() => {
     const fetchHoldings = async () => {
       try {
-        const res = await axios.get("http://localhost:3010/allHoldings");
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/allHoldings`,
+        );
         setAllHoldings(res.data);
       } catch (err) {
         console.error(err);
