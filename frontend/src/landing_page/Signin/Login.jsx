@@ -42,7 +42,8 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "http://localhost:5174/";
+          window.location.href =
+            "https://fullstack-stock-trading-app-3wiu.vercel.app/";
         }, 1000);
       } else {
         handleError(message);
