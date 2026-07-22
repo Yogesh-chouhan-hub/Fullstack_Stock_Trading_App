@@ -24,12 +24,12 @@ const Home = () => {
           setUsername(data.user);
         } else {
           window.location.href =
-            "https://fullstack-stock-trading-4r1nlyxuh-solo-leveling7.vercel.app/login";
+            "https://fullstack-stock-trading-app.vercel.app/login";
         }
       } catch (err) {
         console.log(err);
         window.location.href =
-          "https://fullstack-stock-trading-4r1nlyxuh-solo-leveling7.vercel.app/login";
+          "https://fullstack-stock-trading-app.vercel.app/login";
       }
     };
 
@@ -38,7 +38,7 @@ const Home = () => {
   const Logout = () => {
     removeCookie("token", { path: "/" });
     window.location.href =
-      "https://fullstack-stock-trading-4r1nlyxuh-solo-leveling7.vercel.app/signup";
+      "https://fullstack-stock-trading-app.vercel.app/signup";
   };
   return (
     <div>
