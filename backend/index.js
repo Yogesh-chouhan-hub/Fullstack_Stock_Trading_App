@@ -16,7 +16,12 @@ const authRoute = require("./Routes/AuthRoute");
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://fullstack-stock-trading-4r1nlyxuh-solo-leveling7.vercel.app",
+      "https://fullstack-stock-trading-app-3wiu.vercel.app",
+    ],
     credentials: true,
   }),
 );
