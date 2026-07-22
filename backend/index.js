@@ -17,10 +17,10 @@ const authRoute = require("./Routes/AuthRoute");
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL,
-      process.env.DASHBOARD_URL,
       "http://localhost:5173",
       "http://localhost:5174",
+      "https://fullstack-stock-trading-app.vercel.app",
+      "https://fullstack-stock-trading-app-3wiu.vercel.app",
     ],
     credentials: true,
   }),
@@ -28,6 +28,8 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
+
+app.use("/", authRoute);
 
 mongoose
   .connect(uri)
@@ -241,7 +243,6 @@ mongoose
 //   });
 //   res.send("new position saved...!");
 // });
-app.use("/", authRoute);
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingModel.find({});
