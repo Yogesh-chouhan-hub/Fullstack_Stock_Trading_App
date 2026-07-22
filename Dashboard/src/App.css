@@ -116,6 +116,10 @@ a {
   background: #fff;
   border-right: 1px solid #ececec;
   min-height: 100vh;
+  width:100%;
+  height:100vh;
+  overflow-y:auto;
+  overflow-x:hidden;
   display: flex;
   flex-direction: column;
 }
@@ -127,6 +131,7 @@ a {
 .watchlist-search {
   display: flex;
   align-items: center;
+  justify-content:space-between;
   gap: 10px;
   padding: 14px 16px;
   border-bottom: 1px solid #ececec;
@@ -137,8 +142,9 @@ a {
   border: none;
   outline: none;
   background: transparent;
-  font-size: 14px;
   color: #424242;
+  width:100%;
+  font-size:15px;
 }
 
 .watchlist-search input::placeholder {
@@ -172,9 +178,9 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
   border-bottom: 1px solid #f3f3f3;
-  transition: background 0.2s ease;
+  transition: 0.3s ease;
+  padding:12px 16px;
   cursor: pointer;
 }
 
@@ -210,11 +216,12 @@ a {
 .watchlist-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .watchlist-actions button {
   border: none;
+  white-space:nowrap;
   border-radius: 4px;
   color:black;
   font-weight: bold;
@@ -238,6 +245,53 @@ a {
 
 .sell:hover {
   background: #ef4b18;
+}
+
+@media (max-width:992px){
+
+    .watchlist-container{
+        height:auto;
+    }
+
+    .watchlist-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
+    .watchlist-actions{
+        width:100%;
+        justify-content:space-between;
+        flex-wrap:wrap;
+    }
+
+    .watchlist-actions button{
+        flex:1;
+        min-width:80px;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .watchlist-search{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .watchlist-search span{
+        text-align:right;
+    }
+
+    .stock-price{
+        font-size:14px;
+    }
+
+    .buy-window{
+        width:95%;
+        margin:auto;
+    }
+
 }
 
 /* =====================================================
