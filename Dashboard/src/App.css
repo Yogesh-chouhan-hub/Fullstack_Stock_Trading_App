@@ -1,0 +1,685 @@
+/* =====================================================
+                    GLOBAL
+===================================================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: #f8f9fb;
+  color: #424242;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-success {
+  color: #00b386 !important;
+  font-weight: 600;
+}
+
+.text-danger {
+  color: #e53935 !important;
+  font-weight: 600;
+}
+
+.text-end {
+  text-align: right;
+}
+
+/* =====================================================
+                    NAVBAR
+===================================================== */
+
+.menuOpt {
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px;
+  transition: all 0.25s ease;
+}
+
+.menuOpt:hover {
+  color: #387ed1;
+}
+
+.activeOpt {
+  color: #387ed1;
+  font-weight: 600;
+}
+
+/* =====================================================
+                    HOLDINGS
+===================================================== */
+
+.holdings {
+  background: #fff;
+  padding: 25px;
+  min-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.holdings h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #444;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.holdings table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.holdings th {
+  padding: 16px;
+  font-size: 13px;
+  color: #777;
+  text-align: left;
+  border-bottom: 1px solid #ececec;
+  white-space: nowrap;
+}
+
+.holdings td {
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #f3f3f3;
+  white-space: nowrap;
+}
+
+.holdings tbody tr {
+  transition: background 0.2s ease;
+}
+
+.holdings tbody tr:hover {
+  background: #fafafa;
+}
+
+.holdings tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}
+/* =====================================================
+                    WATCHLIST
+===================================================== */
+
+.watchlist-container {
+  background: #fff;
+  border-right: 1px solid #ececec;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =====================================================
+                    SEARCH BAR
+===================================================== */
+
+.watchlist-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #ececec;
+}
+
+.watchlist-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #424242;
+}
+
+.watchlist-search input::placeholder {
+  color: #999;
+}
+
+.watchlist-search span {
+  color: #888;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* =====================================================
+                    WATCHLIST
+===================================================== */
+
+.watchlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* =====================================================
+                    STOCK ROW
+===================================================== */
+
+.watchlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f3f3f3;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.watchlist-item:hover {
+  background: #fafafa;
+}
+
+.stock-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.stock-details p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.stock-price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* =====================================================
+                BUY / SELL BUTTONS
+===================================================== */
+
+.watchlist-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.watchlist-actions button {
+  border: none;
+  border-radius: 4px;
+  color:black;
+  font-weight: bold;
+  padding: 6px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.buy {
+  background: #387ed1;
+}
+
+.buy:hover {
+  background: #2d6ec0;
+}
+
+.sell {
+  background: #ff5722;
+}
+
+.sell:hover {
+  background: #ef4b18;
+}
+
+/* =====================================================
+                    ICON BUTTONS
+===================================================== */
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.icon-btn:hover {
+  background: #f5f5f5;
+  color: #387ed1;
+  border-color: #387ed1;
+}
+
+/* =====================================================
+                    SCROLLBAR
+===================================================== */
+
+.watchlist::-webkit-scrollbar,
+.holdings::-webkit-scrollbar {
+  width: 6px;
+}
+
+.watchlist::-webkit-scrollbar-thumb,
+.holdings::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 20px;
+}
+
+.watchlist::-webkit-scrollbar-thumb:hover,
+.holdings::-webkit-scrollbar-thumb:hover {
+  background: #b8b8b8;
+}
+
+/* Firefox */
+
+.watchlist,
+.holdings {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 transparent;
+}
+
+/* =====================================================
+                    BUY OVERLAY
+===================================================== */
+
+.buy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  z-index: 9999;
+}
+
+/* =====================================================
+                    BUY WINDOW
+===================================================== */
+
+.buy-window {
+  width: 100%;
+  max-width: 450px;
+
+  background: #fff;
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+                    HEADER
+===================================================== */
+
+.buy-header {
+  padding: 18px 24px;
+
+  background: #f8f9fa;
+
+  border-bottom: 1px solid #ececec;
+
+  font-size: 24px;
+  font-weight: 600;
+  color: #424242;
+}
+
+/* =====================================================
+                    BODY
+===================================================== */
+
+.buy-body {
+  padding: 24px;
+}
+
+/* =====================================================
+                    INPUTS
+===================================================== */
+
+.order-inputs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.order-inputs input {
+  flex: 1;
+
+  padding: 10px 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  transition: 0.25s;
+}
+
+.order-inputs input:focus {
+  outline: none;
+
+  border-color: #387ed1;
+
+  box-shadow: 0 0 0 0.2rem rgba(56, 126, 209, 0.2);
+}
+
+/* =====================================================
+                    FOOTER
+===================================================== */
+
+.buy-footer {
+  border-top: 1px solid #ececec;
+
+  padding-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.buy-footer p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.buy-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buy-buttons button {
+  flex: 1;
+  min-width: 110px;
+  border-radius: 6px;
+  transition: 0.25s ease;
+}
+
+.buy-btn {
+  background: #387ed1;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background: #2d6ec0;
+}
+
+.cancel-btn {
+  background: #e9ecef;
+  color: #444;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #d9dde1;
+}
+
+/* =====================================================
+                RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+  .holdings {
+    padding: 20px;
+  }
+
+  .watchlist-container {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .holdings {
+    padding: 15px;
+  }
+
+  .holdings h3 {
+    font-size: 20px;
+  }
+
+  .watchlist-search {
+    padding: 12px;
+  }
+
+  .watchlist-item {
+    padding: 12px;
+  }
+
+  .stock-details p {
+    font-size: 13px;
+  }
+
+  .stock-price {
+    font-size: 12px;
+  }
+
+  .order-inputs {
+    flex-direction: column;
+  }
+
+  .order-inputs input {
+    width: 100%;
+  }
+
+  .buy-footer {
+    flex-direction: column;
+    align-items: stretch;
+    
+  }
+
+  .buy-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .buy-buttons button {
+    width: 100%;
+  }
+
+  .buy-window {
+    max-width: 100%;
+  }
+
+  .buy-header {
+    padding: 16px;
+    font-size: 20px;
+  }
+
+  .buy-body {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .menuOpt {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .holdings h3 {
+    font-size: 18px;
+  }
+
+  .holdings th,
+  .holdings td {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .buy-header {
+    font-size: 18px;
+  }
+}
+
+/* ==========================
+          ORDERS
+========================== */
+
+.orders-container {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.orders-container h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #424242;
+  margin-bottom: 25px;
+}
+
+.orders-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.orders-container thead {
+  background: #387ed1;
+}
+
+.orders-container thead th {
+  color: white;
+  font-weight: 600;
+  padding: 16px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.orders-container tbody td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #ececec;
+  color: #555;
+}
+
+.orders-container tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.orders-container tbody tr:hover {
+  background: #f8f9fc;
+  transition: 0.25s;
+}
+
+/* BUY & SELL */
+
+.buy {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.sell {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Empty State */
+
+.no-orders {
+  margin-top: 120px;
+}
+
+.no-orders p {
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.no-orders button {
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .orders-container {
+    width: 95%;
+    overflow-x: auto;
+  }
+
+  .orders-container table {
+    min-width: 500px;
+  }
+
+  .orders-container h2 {
+    font-size: 24px;
+  }
+
+  .orders-container thead th,
+  .orders-container tbody td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+
+.menuOpt {
+  color: #555 !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menuOpt:hover {
+  color: #387ed1 !important;
+}
+
+.activeOpt {
+  color: #387ed1 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.profile-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f7b5d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 8px 0;
+  }
+
+  .profile-circle {
+    margin: 10px auto;
+  }
+}
