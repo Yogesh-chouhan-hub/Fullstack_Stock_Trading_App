@@ -40,9 +40,11 @@ const WatchList = () => {
   const filteredStocks = watchlist.filter((stock) =>
     stock.name.toLowerCase().includes(search.toLowerCase()),
   );
+
   const labels = watchlist.map((subArrar) => {
     return subArrar["name"];
   });
+
   const data = {
     labels,
     datasets: [
